@@ -76,6 +76,12 @@ const LearnerSubmissions = [
     }
 ];
 
+//use slice method to copy learner submissions for learner_id: 125 , exclude submitted assignment not yet due.
+let learner125 = LearnerSubmissions.slice(1, 3) 
+
+    console.log(learner125) 
+
+
 function getLearnerData(course, ag, submissions) {
     // here, we would process this data to achieve the desired result.
     const result = [
@@ -98,4 +104,22 @@ function getLearnerData(course, ag, submissions) {
 
 const result = getLearnerData(CourseInfo, AssignmentGroup, LearnerSubmissions);
 
+
 console.log(result);
+
+//Using slice to copy a portion of an array (learner 125)
+
+
+
+
+// use.pop to remove submission 3
+
+
+// // finding learner averages //
+
+// let learnerAvg =
+
+
+
+
+
