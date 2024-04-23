@@ -77,49 +77,23 @@ const LearnerSubmissions = [
 ];
 
 //use slice method to copy learner submissions for learner_id: 125 , exclude submitted assignment not yet due.
-let learner125 = LearnerSubmissions.slice(1, 3) 
+let learner125 = LearnerSubmissions.slice(1, 3)
 
-    console.log(learner125) 
-
-
-function getLearnerData(course, ag, submissions) {
-    // here, we would process this data to achieve the desired result.
-    const result = [
-        {
-            id: 125,
-            avg: 0.985, // (47 + 150) / (50 + 150)
-            1: 0.94, // 47 / 50
-            2: 1.0 // 150 / 150
-        },
-        {
-            id: 132,
-            avg: 0.82, // (39 + 125) / (50 + 150)
-            1: 0.78, // 39 / 50
-            2: 0.833 // late: (140 - 15) / 150
-        }
-    ];
-
-    return result;
-}
-
-const result = getLearnerData(CourseInfo, AssignmentGroup, LearnerSubmissions);
+console.log("learner_id: ", learner125)
+console.log("original array:", LearnerSubmissions)
 
 
-console.log(result);
+LearnerSubmissions.forEach((submission) => {
+    if (submission.assignment_id === assignment.id) 
+        let learnerId = submission.learner_id
+    } 
+    if (!results[learnerId]) {
+        results[learnerId] = {
+            totalScore: 0,
+            totalPossible: 0,
+            assignmentsIncluded: 0
+        };
+    });
 
-//Using slice to copy a portion of an array (learner 125)
-
-
-
-
-// use.pop to remove submission 3
-
-
-// // finding learner averages //
-
-// let learnerAvg =
-
-
-
-
+    console.log(learnerId)
 
