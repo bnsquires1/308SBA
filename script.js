@@ -97,3 +97,77 @@ LearnerSubmissions.forEach((submission) => {
 
     console.log(learnerId)
 
+    const adjustedScore = (submission.submission, assignment.points_possible, assignment.due_at);
+
+    results[learnerId].totalScore += adjustedScore;
+    results[learnerId].totalPossible += assignment.points_possible;
+    results[learnerId].assignmentsIncluded++;
+    
+    // Calculate average score for each learner
+    for (const learnerId in results) {
+        if (results.hasOwnProperty(learnerId)) { // boolean
+            const learnerResult = results[learnerId];
+            if (learnerResult.assignmentsIncluded > 0) {
+                learnerResult.averageScore = (learnerResult.totalScore / learnerResult.totalPossible) * 100;
+            } else {
+                learnerResult.averageScore = 0;
+            }
+        }
+    }
+
+    function getLearnerData(course, ag, submissions) {
+        // here, we would process this data to achieve the desired result.
+        const result = [
+          {
+            id: 125,
+            avg: 0.985, // (47 + 150) / (50 + 150)
+            1: 0.94, // 47 / 50
+            2: 1.0 // 150 / 150
+          },
+          {
+            id: 132,
+            avg: 0.82, // (39 + 125) / (50 + 150)
+            1: 0.78, // 39 / 50
+            2: 0.833 // late: (140 - 15) / 150
+          }
+        ];
+    
+        // Calculate the score, accounting for lateness
+                let grade = submissions.scores;
+                        if ((submission.submission.submitted_at) > (assignment.due_at)) {
+                            grade -= assignment.points_possible * 0.1; // Late penalty
+                        }
+    
+    //                     function getLearnerData(course, ag, submissions) {
+    //                         // here, we would process this data to achieve the desired result.
+    //                         const result = [
+    //                             {
+    //                                 id: 125,
+    //                                 avg: 0.985, // (47 + 150) / (50 + 150)
+    //                                 1: 0.94, // 47 / 50
+    //                                 2: 1.0 // 150 / 150
+    //                             },
+    //                             {
+    //                                 id: 132,
+    //                                 avg: 0.82, // (39 + 125) / (50 + 150)
+    //                                 1: 0.78, // 39 / 50
+    //                                 2: 0.833 // late: (140 - 15) / 150
+    //                             }
+    //                         ];
+    
+    //                         return result;
+    //                     }
+    
+    //                     const result = getLearnerData(CourseInfo, AssignmentGroup, LearnerSubmissions);
+    
+    
+    //                     console.log(result);
+    
+    // //Using slice to copy a portion of an array (learner 125)
+    
+    
+    
+    
+    // // use.pop to remove submission 3
+    
+    
